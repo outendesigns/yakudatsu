@@ -1,4 +1,8 @@
-![My Project Logo](https://outendesigns.github.io/yakudatsu/images/IMG_0115.PNG)
+<div style="width:100%; text-align: center;">
+	<img src="https://outendesigns.github.io/yakudatsu/images/IMG_0115.PNG" alt="yakudatsu logo" width="50">
+	<h1>yakudatsu!<h1>	
+</div>
+
 # yakudatsu!
 # 役立つ!
 Add in-line help popover text to your HTML content - Fast and Easy
