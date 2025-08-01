@@ -2,22 +2,67 @@
 <html>
 <head>
 	<title>yakudatsu!</title>
+	<style type="text/css">
+		html,body{
+			margin:0px;
+			padding:0px;
+			font-family: sans-serif;
+		}
+		p{
+			margin:0px;
+			padding:15px 25px;
+		}
+		.row{
+			width:80%;
+			margin:15px auto;
+			background:#f8f6ed;
+			border-radius:15px;
+		}
+		.row-header{
+			background: #eb493a;
+			color:#f8f6ed;
+			padding:15px 0px 15px 25px;
+			font-weight: 100;
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+		}
+	</style>
 </head>
 <body>
-	<br>
+	<header style="text-align: center; border-bottom:2px solid #eb493a; background: #f8f6ed;">
+		<img src="https://outendesigns.github.io/yakudatsu/images/IMG_0115.PNG" alt="yakudatsu logo" width="100" style="margin-top:15px;">
+		<h1 style="margin:0px 0px 10px 0px; padding:0px;">yakudatsu!&nbsp;<span style="font-size:10px;">v1.2</span></h1>
+		<p style="font-size:10px;">Copyright (c) 2025 Eric R Outen | MIT License</p>
+	</header>
+	<div class="row">
+		<h1 class="row-header">What is 役立つ</h1><span class="yakudatsu">yakudatsu</span>
+		<p>Yakudatsu is a lightweight JavaScript plugin that makes it easy to add inline help or explanatory text directly within your content. By simply wrapping text in a &lt;span&gt; with a special class, Yakudatsu enhances readability and user guidance without cluttering your layout. It's perfect for tooltips, definitions, or context-aware help — all without needing a full UI framework.</p>
+	</div>
+	<div class="row">
+		<h1 class="row-header">Getting Started</h1>
+		<ol>
+			<li>Download the latest release of yakudatsu.js from Github Release Page.<br>
+				Or add using CDN method.<br>
+				<code>&lt;script src="https://outendesigns.github.io/yakudatsu/yakudatsu.js"&gt;&lt;/script&gt;</code><br>
+				Be sure to include this Javascript at the bottom of your page before the closing &lt;/body&gt; tag.
+			</li>
+			<li>Initialize using a &lt;span&gt; tag.</li>
+		</ol>
+	</div>
 	<p>This is some arbitrary text</p>
-	<span class="helper-text">This is help text, it will appear as a question mark icon at the end of the paragraph tag, and hovering over the question mark icon will display this text in a box</span>
+	<span class="yakudatsu">This is help text, it will appear as a question mark icon at the end of the paragraph tag, and hovering over the question mark icon will display this text in a box</span>
 
 	<h1>Header Tag</h1>
-	<span class="helper-text">It doesn't matter what type of tag you attach this helper to, it will work.</span>
+	<span class="yakudatsu">It doesn't matter what type of tag you attach this helper to, it will work.</span>
 
 	<br>
 
 	<figure>
 		<img src="https://images.unsplash.com/photo-1529700215145-58542a1f36b6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&w=2000" style="width:300px;">
 		<figcaption>These are blocks</figcaption>
-		<span class="helper-text helper-width-500">We can add some helper text to a figcaption</span>
+		<span class="yakudatsu helper-width-500">We can add some helper text to a figcaption</span>
 	</figure>
+
 	<script src="https://outendesigns.github.io/yakudatsu/yakudatsu.js"></script>
 </body>
 </html>

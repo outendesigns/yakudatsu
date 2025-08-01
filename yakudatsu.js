@@ -1,4 +1,4 @@
-//yakudatsu.js v1.1
+//yakudatsu.js v1.2
 
 /*
 MIT License
@@ -25,7 +25,7 @@ SOFTWARE.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const helperSpans = document.querySelectorAll('.helper-text');
+  const helperSpans = document.querySelectorAll('.yakudatsu');
 
   helperSpans.forEach(span => {
     const helpText = span.textContent.trim();
@@ -51,8 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
       lineHeight: '18px',
       textAlign: 'center',
       borderRadius: '50%',
-      backgroundColor: '#ccc',
-      color: '#000',
+      backgroundColor: '#f8f6ed',
+      color: '#eb493a',
+      border: '1px solid black',
       fontWeight: 'bold',
       fontSize: '12px',
       marginLeft: '0.5em',

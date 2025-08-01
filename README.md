@@ -1,7 +1,4 @@
-<div style="width:100%; text-align: center;">
-	<img src="https://outendesigns.github.io/yakudatsu/images/IMG_0115.PNG" alt="yakudatsu logo" width="50">
-	<h1>yakudatsu!<h1>	
-</div>
+<img src="https://outendesigns.github.io/yakudatsu/images/IMG_0115.PNG" alt="yakudatsu logo" width="100">
 
 # yakudatsu!
 # 役立つ!
