@@ -10,10 +10,25 @@
 		}
 		p{
 			margin:0px;
-			padding:15px 25px;
+			padding:25px;
+			line-height: 2;
+			font-size:16px;
+		}
+		ol{
+			margin:0px 25px;
+			padding:25px;
+			line-height: 1.5;
+			font-size:16px;
+		}
+		li{
+			padding-left: 5px;
+		}
+		li::marker {
+			font-weight: bold;
+			font-size:18px;
 		}
 		.row{
-			width:80%;
+			width:50%;
 			margin:15px auto;
 			background:#f8f6ed;
 			border-radius:15px;
@@ -26,27 +41,59 @@
 			border-top-left-radius: 15px;
 			border-top-right-radius: 15px;
 		}
+		.language-xml{
+			background:#444;
+			border:1px solid black;
+			border-radius:10px;
+		}
+		.language-xml code{
+			font-family: monospace;
+			color:white;
+		}
+		.blue-text{
+			color:#ADD8E6;
+		}
+		.red-text{
+			color:#FF7074;
+		}
+		.purple-text{
+			color:#CBC3E3;
+		}
 	</style>
 </head>
 <body>
 	<header style="text-align: center; border-bottom:2px solid #eb493a; background: #f8f6ed;">
 		<img src="https://outendesigns.github.io/yakudatsu/images/IMG_0115.PNG" alt="yakudatsu logo" width="100" style="margin-top:15px;">
 		<h1 style="margin:0px 0px 10px 0px; padding:0px;">yakudatsu!&nbsp;<span style="font-size:10px;">v1.2</span></h1>
-		<p style="font-size:10px;">Copyright (c) 2025 Eric R Outen | MIT License</p>
+		<p style="font-size:10px;">Copyright (c) 2025 Eric R Outen | <a href="https://mit-license.org/" target="_blank">MIT License</a></p>
 	</header>
 	<div class="row">
-		<h1 class="row-header">What is 役立つ</h1><span class="yakudatsu">yakudatsu</span>
+		<h1 class="row-header">What is Yakudatsu</h1><span class="yakudatsu">This is yakudatsu!</span>
 		<p>Yakudatsu is a lightweight JavaScript plugin that makes it easy to add inline help or explanatory text directly within your content. By simply wrapping text in a &lt;span&gt; with a special class, Yakudatsu enhances readability and user guidance without cluttering your layout. It's perfect for tooltips, definitions, or context-aware help — all without needing a full UI framework.</p>
 	</div>
 	<div class="row">
 		<h1 class="row-header">Getting Started</h1>
 		<ol>
-			<li>Download the latest release of yakudatsu.js from Github Release Page.<br>
+			<li>
+				Download the latest release of yakudatsu.js from the <a href="https://github.com/outendesigns/yakudatsu" target="_blank">Github Release Page.</a><br><br>
 				Or add using CDN method.<br>
-				<code>&lt;script src="https://outendesigns.github.io/yakudatsu/yakudatsu.js"&gt;&lt;/script&gt;</code><br>
-				Be sure to include this Javascript at the bottom of your page before the closing &lt;/body&gt; tag.
+				Include this Javascript at the bottom of your page before the closing &lt;/body&gt; tag.<br>
+				<pre class="language-xml">
+
+<code>  <span class="blue-text">&lt;</span><span class="red-text">script</span> <span class="purple-text">src=</span><span class="blue-text">"</span>https://outendesigns.github.io/yakudatsu/yakudatsu.js<span class="blue-text">"</span><span class="blue-text">&gt;&lt;/</span><span class="red-text">script</span><span class="blue-text">&gt;</span></code>
+				</pre>
+				
 			</li>
-			<li>Initialize using a &lt;span&gt; tag.</li>
+			<li>
+				Initialize using a &lt;span&gt; tag.<br>
+				Add the class yakudatsu to the &lt;span&gt; tag.<br>
+				Place any text you want displayed by the helper inside the &lt;span&gt; tag.<br>
+				<pre class="language-xml">
+
+<code>  <span class="blue-text">&lt;</span><span class="red-text">p</span><span class="blue-text">&gt;</span>You will see this example rendered below.<span class="blue-text">&lt;/</span><span class="red-text">p</span><span class="blue-text">&gt;</span>
+  &lt;span class="yakudatsu"&gt;This is additional helpful text.&lt;/span&gt;</code>
+				</pre>
+			</li>
 		</ol>
 	</div>
 	<p>This is some arbitrary text</p>
