@@ -40,6 +40,30 @@ document.addEventListener('DOMContentLoaded', () => {
       if (match) maxWidth = `${match[1]}px`;
     }
 
+    // Extract background color from class (e.g. helper-bgcolor-black or hexcode helper-bgcolor-#123456)
+    const bgColor = Array.from(span.classList).find(cls => cls.startsWith('helper-bgcolor-'));
+    let defaultBgColor = '#666';
+    if (bgColor) {
+      const match = bgColor.match(/helper-bgcolor-([a-zA-Z]+|#[0-9a-fA-F]{3,6})/);
+      if (match) defaultBgColor = `${match[1]}`;
+      console.log(defaultBgColor);
+    }
+
+    // Extract font color from class (e.g. helper-fontcolor-white or hexcode helper-fontcolor-#ffffff)
+    const fontColor = Array.from(span.classList).find(cls => cls.startsWith('helper-fontcolor-'));
+    let defaultFontColor = '#fff';
+    if (fontColor) {
+      const match = fontColor.match(/helper-fontcolor-([a-zA-Z]+|#[0-9a-fA-F]{3,6})/);
+      if (match) defaultFontColor = `${match[1]}`;
+    }
+
+    const fontSize = Array.from(span.classList).find(cls => cls.startsWith('helper-fontsize-'));
+    let defaultFontSize = '12px';
+    if (fontSize) {
+      const match = fontSize.match(/helper-fontsize-(\d+)/);
+      if (match) defaultFontSize = `${match[1]}px`;
+    }
+
     // Create icon
     const icon = document.createElement('span');
     icon.textContent = '?';
@@ -51,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
       lineHeight: '18px',
       textAlign: 'center',
       borderRadius: '50%',
-      backgroundColor: '#f8f6ed',
-      color: '#eb493a',
-      border: '1px solid black',
+      backgroundColor: defaultBgColor,
+      color: defaultFontColor,
+      border: `1px solid ${defaultFontColor}`,
       fontWeight: 'bold',
-      fontSize: '12px',
+      fontSize: defaultFontSize,
       marginLeft: '0.5em',
       cursor: 'pointer',
       position: 'relative',
@@ -67,14 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
     tooltip.textContent = helpText;
     Object.assign(tooltip.style, {
       position: 'absolute',
-      bottom: '125%',
-      left: '50%',
-      transform: 'translateX(-50%)',
+      bottom: '50%',
+      transform: 'translateY(50%)',
+      left: '200%',
       padding: '8px',
-      background: '#333',
-      color: '#fff',
+      background: defaultBgColor,
+      color: defaultFontColor,
       borderRadius: '4px',
-      fontSize: '0.75em',
+      fontSize: defaultFontSize,
       visibility: 'hidden',
       opacity: '0',
       transition: 'opacity 0.3s ease',
@@ -83,6 +107,22 @@ document.addEventListener('DOMContentLoaded', () => {
       wordWrap: 'break-word',
       whiteSpace: 'normal'
     });
+
+    // Create arrow
+    const arrow = document.createElement('div');
+    Object.assign(arrow.style, {
+      content: "''",
+      position: 'absolute',
+      left: '-6px',      // places arrow to the left of tooltip box
+      top: '50%',
+      transform: 'translateY(-50%)',
+      width: '0',
+      height: '0',
+      borderTop: '10px solid transparent',
+      borderBottom: '10px solid transparent',
+      borderRight: `10px solid ${defaultBgColor}`,   // matches tooltip background
+    });
+    tooltip.appendChild(arrow);
 
     // Tooltip visibility events
     icon.appendChild(tooltip);
