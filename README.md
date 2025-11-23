@@ -4,7 +4,7 @@
 # 役立つ!
 Add in-line help popover text to your HTML content - Fast and Easy
 ## Example Usage:
-### Add the CDN to your page header
+### Add the CDN just above the closing `</body>` tag of your web page
 `<script src="https://outendesigns.github.io/yakudatsu/yakudatsu.js"></script>`
 ## View Example Page:
 <a href="https://outendesigns.github.io/yakudatsu/example.html" target="_blank">Example Page Here</a>
