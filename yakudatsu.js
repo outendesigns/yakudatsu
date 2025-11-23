@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Extract max width from class (e.g. helper-width-250)
     const widthClass = Array.from(span.classList).find(cls => cls.startsWith('helper-width-'));
-    let maxWidth = '200px'; // default
+    let maxWidth = '300px'; // default
     if (widthClass) {
       const match = widthClass.match(/helper-width-(\d+)/);
       if (match) maxWidth = `${match[1]}px`;

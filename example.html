@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>yakudatsu!</title>
+	<link rel="stylesheet" type="text/css" href="https://outendesigns.github.io/tagudashi/tagudashi-styles.css">
 	<style type="text/css">
 		html,body{
 			margin:0px;
@@ -28,7 +29,7 @@
 			font-size:18px;
 		}
 		.row{
-			width:50%;
+			width:70%;
 			margin:15px auto;
 			background:#f8f6ed;
 			border-radius:15px;
@@ -41,23 +42,8 @@
 			border-top-left-radius: 15px;
 			border-top-right-radius: 15px;
 		}
-		.language-xml{
-			background:#444;
-			border:1px solid black;
-			border-radius:10px;
-		}
-		.language-xml code{
-			font-family: monospace;
-			color:white;
-		}
-		.blue-text{
-			color:#ADD8E6;
-		}
-		.red-text{
-			color:#FF7074;
-		}
-		.purple-text{
-			color:#CBC3E3;
+		.tagudashi{
+			border-radius: 15px;
 		}
 	</style>
 </head>
@@ -75,44 +61,42 @@
 		<h1 class="row-header">Getting Started</h1>
 		<ol>
 			<li>
-				Download the latest release of yakudatsu.js from the <a href="https://github.com/outendesigns/yakudatsu" target="_blank">Github Release Page.</a><br><br>
+				Download the latest release of yakudatsu.js from the <a href="https://github.com/outendesigns/yakudatsu" target="_blank">Github Release Page.</a><br>
 				Or add using CDN method.<br>
 				Include this Javascript at the bottom of your page before the closing &lt;/body&gt; tag.<br>
-				<pre class="language-xml">
-
-<code>  <span class="blue-text">&lt;</span><span class="red-text">script</span> <span class="purple-text">src=</span><span class="blue-text">"</span>https://outendesigns.github.io/yakudatsu/yakudatsu.js<span class="blue-text">"</span><span class="blue-text">&gt;&lt;/</span><span class="red-text">script</span><span class="blue-text">&gt;</span></code>
-				</pre>
+<pre class="tagudashi">
+<`script src="https://outendesigns.github.io/yakudatsu/yakudatsu.js"><`/script>
+</pre>
 				
 			</li>
 			<li>
-				Initialize using a &lt;span&gt; tag.<br>
-				Add the class yakudatsu to the &lt;span&gt; tag.<br>
-				Place any text you want displayed by the helper inside the &lt;span&gt; tag.<br>
-				<pre class="language-xml">
-
-<code>  <span class="blue-text">&lt;</span><span class="red-text">p</span><span class="blue-text">&gt;</span>You will see this example rendered below.<span class="blue-text">&lt;/</span><span class="red-text">p</span><span class="blue-text">&gt;</span>
-  &lt;span class="yakudatsu"&gt;This is additional helpful text.&lt;/span&gt;</code>
-				</pre>
+				Yakudatsu displays helper text that appears <i>after</i> another element.<br><br>
+				Add a regular element such as &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, etc.<br>
+				Immediately after it, add a &lt;span&gt; element.<br>
+				Give that &lt;span&gt; the class 'yakudatsu'.<br>
+				Put the helper text inside the &lt;span&gt;<br>
+<pre class="tagudashi">
+<`p>Here is a sample paragraph element.<`/p>
+<`span class="yakudatsu">This is additional helpful text.<`/span>
+</pre>
+				<p>Here is a sample paragraph element.</p>
+				<span class="yakudatsu">This is additional helpful text.</span>
+			</li>
+			<li>
+				Optionally, you can add additional classes to change the style of your yakudatsu.
+<pre class="tagudashi">
+<`h1>Header Text<`/h1>
+<`span class="yakudatsu helper-bgcolor-red helper-fontcolor-black helper-fontsize-22">Customized styles are used on this yakudatsu.<`/span>
+</pre>
+				<h1>Header Text</h1>
+				<span class="yakudatsu helper-bgcolor-red helper-fontcolor-black helper-fontsize-22">Customized styles are used on this yakudatsu.</span>
 			</li>
 		</ol>
 	</div>
-	<p>This is some arbitrary text</p>
-	<span class="yakudatsu helper-width-500 helper-bgcolor-red helper-fontcolor-#fff helper-fontsize-16">This is help text, it will appear as a question mark icon at the end of the paragraph tag, and hovering over the question mark icon will display this text in a box</span>
-
-	<h1>Header Tag</h1>
-	<span class="yakudatsu">It doesn't matter what type of tag you attach this helper to, it will work.</span>
-
-	<br>
-
-	<figure>
-		<img src="https://images.unsplash.com/photo-1529700215145-58542a1f36b6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&w=2000" style="width:300px;">
-		<figcaption>These are blocks</figcaption>
-		<span class="yakudatsu helper-width-500">We can add some helper text to a figcaption</span>
-	</figure>
-
 	<!--
 	<script src="https://outendesigns.github.io/yakudatsu/yakudatsu.js"></script>
 	-->
 	<script type="text/javascript" src="yakudatsu.js"></script>
+	<script src="https://outendesigns.github.io/tagudashi/tagudashi.js"></script>
 </body>
 </html>
